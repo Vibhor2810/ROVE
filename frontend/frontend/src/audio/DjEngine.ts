@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Two-deck playback engine built on HTMLAudioElement + shared Web Audio AnalyserNode.
  *
  * Crossfades ramp deck GainNodes (when Web Audio is attached) and element volume
@@ -73,7 +73,7 @@ export class DjEngine {
 
         this.ctx = ctx
         this.analyser = analyser
-        this.freqBuf = new Uint8Array(analyser.frequencyBinCount)
+        this.freqBuf = new Uint8Array(new ArrayBuffer(analyser.frequencyBinCount))
 
         this.decks.forEach((el, idx) => {
           const src = ctx.createMediaElementSource(el)
