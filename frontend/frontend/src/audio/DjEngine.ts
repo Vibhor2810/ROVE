@@ -23,7 +23,7 @@ export class DjEngine {
   private analyser: AnalyserNode | null = null
   private sources: [MediaElementAudioSourceNode | null, MediaElementAudioSourceNode | null] = [null, null]
   private gains: [GainNode | null, GainNode | null] = [null, null]
-  private freqBuf: Uint8Array | null = null
+  private freqBuf: Uint8Array<ArrayBuffer> | null = null
   private webAudioBroken = false
 
   onEnded: (() => void) | null = null
